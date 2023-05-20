@@ -1,0 +1,7 @@
+# run pump for 10 seconds every 6 hours
+
+Rule1 ON Time#Minute|360 DO Backlog Channel2 60; Power2 on; RuleTimer1 10 ENDON ON Rules#Timer=1 DO Power2 off ENDON
+
+# turn light on/off daily
+
+Rule2 ON Time#Minute=%sunrise% DO Power1 1 ENDON ON Time#Minute=%sunset% DO Power1 0 ENDON
